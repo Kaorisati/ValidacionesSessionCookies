@@ -13,7 +13,7 @@ const validaciones = [
   check('name').notEmpty().withMessage('completar nombre'),
   check('color').notEmpty().withMessage('completar color'),
   check('email').isEmail().withMessage('completar con un mail valido'),
-  check('age').notEmpty().withMessage('completar edad')
+  check('age').notEmpty().withMessage('completar edad').isNumeric().withMessage("debes ingresar un numero")
 ];
 router.get('/register', userController.register);
 router.post('/register',validaciones, userController.storeUser);

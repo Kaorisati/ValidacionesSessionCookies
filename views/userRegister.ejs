@@ -27,8 +27,12 @@
       <label for="edad">Edad</label>
       <input type="text" name="age" id="edad">
 <br>
-      <button class="button" type="submit">Crear</button>
-    <%if(locals.frase) { %>
+      <button class="button" type="submit">Paso 1</button>
+      
+      <button formaction="/saludos"  class="button" type="submit">Paso 2</button>
+
+
+      <%if(locals.frase) { %>
       <div id="p2" style="padding: 10px; border-radius: 10%;width: fit-content;">
     <p style="margin: auto;"><%=locals.frase%></p>
   </div>
