@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>REGISTRO</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body >
+    <form class="white-pink" action="/users/register" method="post">
+    <h1 >Bienvenido a registro de Usuario</h1>
+    <% if (locals.errors){ errors.forEach(error => { %>
+                    <p style="color:red"> <%= error.msg %></p>
+                    <%})}%> 
+
+      <label  for="name">Nombre</label>
+      <input type="text" name="name" id="name" >
+<br>
+      <label for="categoty">Color:</label>
+      <select  name="color" id="categoty">
+          <option value="yellow">Amarillo</option>
+          <option value="blue">Azul</option>
+          <option value="green">Verde</option>
+      </select>
+<br>
+      <label for="inputEmail1">Email</label>
+      <input  type="email" name="email" id="inputEmail1" placeholder="email@suemail.com">
+<br>
+      <label for="edad">Edad</label>
+      <input type="text" name="age" id="edad">
+<br>
+      <button class="button" type="submit">Crear</button>
+    <%if(locals.frase) { %>
+      <div id="p2" style="padding: 10px; border-radius: 10%;width: fit-content;">
+    <p style="margin: auto;"><%=locals.frase%></p>
+  </div>
+    <%}%>
+    <script>
+      document.getElementById("p2").style.backgroundColor = "<%= locals.bkgcolor%>"
+      document.getElementById("p2").style.color = "black";
+      </script>
+    </form>
+  </body>
+</html>
